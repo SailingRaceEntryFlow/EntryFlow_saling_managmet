@@ -35,7 +35,7 @@
       position: relative;
       overflow: hidden;
       border-radius: 6px;
-      margin-bottom: 26px;
+      margin-bottom: 18px;
       min-height: 420px;
       background-color: #dfe5df;
       border: 1px solid rgba(0,0,0,0.06);
@@ -52,14 +52,14 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      padding: 18px 18px 24px 18px;
+      padding: 18px 18px 16px 18px;
     }
 
     .logo-row {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .event-logo {
@@ -73,27 +73,14 @@
       text-align: center;
       font-size: 22px;
       font-weight: 700;
-      margin: 6px 0 16px 0;
+      margin: 6px 0 12px 0;
     }
 
     .hero-subtitle {
       text-align: center;
       font-size: 18px;
       font-weight: 700;
-      margin: 8px 0;
-    }
-
-    .event-banner-wrap {
-      display: flex;
-      justify-content: center;
-      margin: 18px 0 20px 0;
-    }
-
-    .event-banner {
-      max-width: 100%;
-      max-height: 190px;
-      background: rgba(255,255,255,0.92);
-      padding: 8px;
+      margin: 6px 0 14px 0;
     }
 
     .hero-notes {
@@ -101,30 +88,40 @@
       margin: 0 auto;
       padding-left: 18px;
       font-size: 16px;
-      line-height: 1.55;
+      line-height: 1.6;
     }
 
     .hero-notes li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+    }
+
+    .hero-notes a {
+      color: #0d5e92;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .hero-notes a:hover {
+      opacity: 0.85;
     }
 
     .section-title {
       text-align: center;
       font-size: 17px;
       font-weight: 700;
-      margin: 26px 0 6px 0;
+      margin: 18px 0 6px 0;
       letter-spacing: 0.2px;
     }
 
     .section-subtitle {
       text-align: center;
       font-size: 13px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .separator {
       border-top: 1px solid #7a6c62;
-      margin: 10px 0 18px 0;
+      margin: 8px 0 18px 0;
     }
 
     .notice-box {
@@ -290,14 +287,16 @@
 
       .hero {
         min-height: auto;
+        margin-bottom: 14px;
       }
 
       .hero-content {
-        padding: 12px;
+        padding: 10px 10px 12px 10px;
       }
 
       .logo-row {
         justify-content: center;
+        margin-bottom: 10px;
       }
 
       .event-logo {
@@ -307,24 +306,36 @@
 
       .hero-title {
         font-size: 18px;
+        margin: 4px 0 8px 0;
       }
 
       .hero-subtitle {
-        font-size: 16px;
+        font-size: 15px;
+        margin: 4px 0 10px 0;
       }
 
       .hero-notes {
         font-size: 15px;
+        line-height: 1.6;
         padding-left: 16px;
+      }
+
+      .hero-notes li {
+        margin-bottom: 8px;
       }
 
       .section-title {
         font-size: 15px;
-        margin-top: 16px;
+        margin: 12px 0 4px 0;
       }
 
       .section-subtitle {
         font-size: 12px;
+        margin-bottom: 6px;
+      }
+
+      .separator {
+        margin: 6px 0 14px 0;
       }
 
       .notice-box .line1 {
@@ -375,11 +386,6 @@
           <div class="hero-title">ΔΗΛΩΣΗ ΣΥΜΜΕΤΟΧΗΣ</div>
 
           <div class="hero-subtitle" id="eventSubtitle1"></div>
-          <div class="hero-subtitle" id="eventSubtitle2"></div>
-
-          <div class="event-banner-wrap">
-            <img id="eventBanner" class="event-banner" src="" alt="Banner αγώνα" />
-          </div>
 
           <ul class="hero-notes" id="eventNotes"></ul>
         </div>
@@ -438,16 +444,14 @@
     const JOTFORM_BASE_URL = "https://form.jotform.com/260849167199372";
 
     const EVENT_LOGO = "https://github.com/jsamartzis-png/logos/blob/main/logo_EntryFlow_removebg-preview.png?raw=true";
-    const EVENT_BANNER = "https://github.com/jsamartzis-png/logos/blob/main/%CE%A0%CE%95%CE%A1%CE%94%CE%99%CE%9A%CE%91_2026-removebg-preview.png?raw=true";
     const EVENT_BACKGROUND = "background.jpg";
 
-    const EVENT_SUBTITLE_1 = "στον αγώνα ιστιοπλοΐας ανοιχτής θαλάσσης";
-    const EVENT_SUBTITLE_2 = "53ος Αγώνας Ελληνικής Επαναστάσεως – Ύδρα 2026 27 – 29 Μαρτίου";
+    const EVENT_SUBTITLE_1 = "σε αγώνα ιστιοπλοΐας ανοιχτής θαλάσσης";
 
     const EVENT_NOTES = [
       "Με τη χρήση αυτής της εφαρμογής, μπορείτε εύκολα να υποβάλετε τα απαραίτητα έγγραφα και να ολοκληρώσετε την πληρωμή του παραβόλου (όλα σε ένα σημείο).",
       "Τα προσωπικά δεδομένα που καταχωρούνται εδώ, χρησιμοποιούνται αποκλειστικά για τη διαχείριση της συμμετοχής σας στον αγώνα, σύμφωνα με την ισχύουσα νομοθεσία.",
-      "Διαβάστε την Πολιτική Απορρήτου και τους Όρους Χρήσης πριν συνεχίσετε."
+      'Διαβάστε την <a href="https://example.com/privacy-policy" target="_blank" rel="noopener noreferrer">Πολιτική Απορρήτου</a> και τους <a href="https://example.com/terms" target="_blank" rel="noopener noreferrer">Όρους Χρήσης</a> πριν συνεχίσετε.'
     ];
 
     const NOTICE_YEAR_TEXT =
@@ -493,10 +497,8 @@
 
     function setupHero() {
       document.getElementById("eventLogo").src = EVENT_LOGO;
-      document.getElementById("eventBanner").src = EVENT_BANNER;
       document.getElementById("heroBg").style.backgroundImage = "url('" + EVENT_BACKGROUND + "')";
       document.getElementById("eventSubtitle1").textContent = EVENT_SUBTITLE_1;
-      document.getElementById("eventSubtitle2").textContent = EVENT_SUBTITLE_2;
       document.getElementById("noticeYearText").textContent = NOTICE_YEAR_TEXT;
       document.getElementById("noticeInfoText").textContent = NOTICE_INFO_TEXT;
 
@@ -505,7 +507,7 @@
 
       EVENT_NOTES.forEach(function (note) {
         const li = document.createElement("li");
-        li.textContent = note;
+        li.innerHTML = note;
         notesList.appendChild(li);
       });
     }
