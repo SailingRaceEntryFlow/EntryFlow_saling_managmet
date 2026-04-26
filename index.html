@@ -650,8 +650,9 @@ function buildPrefillUrl(data) {
           return;
         }
 
-        lastFoundData = json.data || {};
-        showResult(lastFoundData);
+       lastFoundData = json.data || {};
+       console.log(lastFoundData);
+       showResult(lastFoundData);
         setStatus("Η αναζήτηση ολοκληρώθηκε.");
       } catch (err) {
         console.error(err);
